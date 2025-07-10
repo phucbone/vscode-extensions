@@ -1,4 +1,4 @@
-# VSCode-extensions
+# golang
 
 ```shell
 # Split files
