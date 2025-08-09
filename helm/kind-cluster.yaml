@@ -1,0 +1,23 @@
+---
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: k8s-cluster
+# networking:
+#   podSubnet: "10.244.0.0/16"
+# One control plane node and three "workers".
+#
+# While these will not add more real compute capacity and
+# have limited isolation, this can be useful for testing
+# rolling updates etc.
+#
+# The API-server and other control plane components will be
+# on the control-plane node.
+#
+# You probably don't need this unless you are testing Kubernetes itself.
+nodes:
+  - role: control-plane
+    image: kindest/node:v1.33.1@sha256:cfea27c21c338b9948ea55c413b9c9e2549f3df89a89424889a1fd3ecb0c8951
+  - role: worker
+    image: kindest/node:v1.33.1@sha256:cfea27c21c338b9948ea55c413b9c9e2549f3df89a89424889a1fd3ecb0c8951
+  - role: worker
+    image: kindest/node:v1.33.1@sha256:cfea27c21c338b9948ea55c413b9c9e2549f3df89a89424889a1fd3ecb0c8951
